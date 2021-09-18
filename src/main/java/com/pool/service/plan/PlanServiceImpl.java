@@ -19,27 +19,27 @@ public class PlanServiceImpl implements PlanService {
 	@Transactional
 	public Plan savePlan(Plan plan) {
 		
-		return null;
+		return planRepository.save(plan);
 	}
 
 	@Override
 	@Transactional
 	public List<Plan> getAllPlans() {
 		// TODO Auto-generated method stub
-		return null;
+		return planRepository.findAll();
 	}
 
 	@Override
 	@Transactional
 	public Plan updatePlan(Plan plan) {
 		// TODO Auto-generated method stub
-		return null;
+		return planRepository.save(plan);
 	}
 
 	@Override
 	@Transactional
 	public Plan getPlanByPlanId(Long planId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
