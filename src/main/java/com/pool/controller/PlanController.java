@@ -1,6 +1,8 @@
 package com.pool.controller;
 
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.pool.domine.Plan;
 import com.pool.model.CommonResponse;
+import com.pool.model.PlanModel;
 import com.pool.service.plan.PlanService;
 
 @RestController
@@ -50,5 +53,12 @@ public class PlanController {
 	public ResponseEntity<?> deletePlanByPlanId(@PathVariable("planId") Long planId) {
 		CommonResponse commonResponse = planService.deletePlanByPlanId(planId);
 		return new ResponseEntity<>(commonResponse, HttpStatus.OK);
+	}
+
+	@GetMapping("/custumdata")
+	public ResponseEntity<?> getCustomPlanData() {
+		List<PlanModel> streamPlan = planService.getCustomPlanData();
+		
+		return new ResponseEntity<>(streamPlan, HttpStatus.OK);
 	}
 }

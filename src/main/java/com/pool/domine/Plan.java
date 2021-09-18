@@ -3,6 +3,7 @@ package com.pool.domine;
 import java.io.Serializable;
 import java.sql.Date;
 
+import javax.persistence.Column;
 import javax.persistence.ColumnResult;
 import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
@@ -15,9 +16,9 @@ import javax.persistence.Table;
 
 import com.pool.model.PlanModel;
 
-@Table
+@Table(name = "PLAN")
 @Entity
-@NamedNativeQuery(name = "plantitle_description_query", query = "SELECT P.planTitle as planTitleModel,P.planDescription as planDescriptionModel FROM Plan P", resultSetMapping = "plantitle_description")
+@NamedNativeQuery(name = "plantitle_description_query", query = "SELECT P.PLAN_TITLE as planTitleModel,P.PLAN_DESCRIPTION as planDescriptionModel FROM PLAN P", resultSetMapping = "plantitle_description")
 @SqlResultSetMapping(name = "plantitle_description", classes = @ConstructorResult(targetClass = PlanModel.class, columns = {
 		@ColumnResult(name = "planTitleModel", type = String.class),
 		@ColumnResult(name = "planDescriptionModel", type = String.class) }))
@@ -26,7 +27,9 @@ public class Plan implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long planId;
+	@Column(name = "PLAN_TITLE")
 	private String planTitle;
+	@Column(name = "PLAN_DESCRIPTION")
 	private String planDescription;
 	private Date planCreatedDate;
 	private Date planEndDate;
