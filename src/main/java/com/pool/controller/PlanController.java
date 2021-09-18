@@ -44,13 +44,13 @@ public class PlanController {
 	}
 
 	@GetMapping("/plan/{planId}")
-	public ResponseEntity<?> getPlanByPlanId(@PathVariable("planId") Long planId) {
+	public ResponseEntity<?> getPlanByPlanId(@PathVariable("planId") Integer planId) {
 		Plan paln = planService.getPlanByPlanId(planId);
 		return new ResponseEntity<>(paln, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/delete/{planId}")
-	public ResponseEntity<?> deletePlanByPlanId(@PathVariable("planId") Long planId) {
+	public ResponseEntity<?> deletePlanByPlanId(@PathVariable("planId") Integer planId) {
 		CommonResponse commonResponse = planService.deletePlanByPlanId(planId);
 		return new ResponseEntity<>(commonResponse, HttpStatus.OK);
 	}

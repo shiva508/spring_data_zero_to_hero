@@ -14,9 +14,9 @@ public interface PlanService {
 
 	public Plan updatePlan(Plan plan);
 
-	public Plan getPlanByPlanId(Long planId);
+	public Plan getPlanByPlanId(Integer planId);
 
-	public CommonResponse deletePlanByPlanId(Long planId);
+	public CommonResponse deletePlanByPlanId(Integer planId);
 
 	public List<PlanModel> getCustomPlanData();
 }

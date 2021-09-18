@@ -2,6 +2,7 @@ package com.pool.service.plan;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,25 +41,32 @@ public class PlanServiceImpl implements PlanService {
 	@Override
 	@Transactional
 	public Plan updatePlan(Plan plan) {
-		
 		return planRepository.save(plan);
 	}
 
 	@Override
 	@Transactional
-	public Plan getPlanByPlanId(Long planId) {
-		Plan  searchedPlan=planRepository.getById(planId);
-		if(null==searchedPlan) {
-			throw new NoRecardsFoundException(StudentpoolConstants.SEARCH_NO_DATA_FOUND_MESSAGE);
+	public Plan getPlanByPlanId(Integer planId) {
+		Optional<Plan>  optionalPlan=planRepository.findById(planId);
+		Plan searchedPlan;
+		if(optionalPlan.isPresent()) {
+			searchedPlan=optionalPlan.get();
+		}else {
+			throw new NoRecardsFoundException(StudentpoolConstants.SEARCH_NO_DATA_FOUND_MESSAGE+planId);
 		}
 		return searchedPlan;
 	}
 
 	@Override
 	@Transactional
-	public CommonResponse deletePlanByPlanId(Long planId) {
-		planRepository.deleteById(planId);
-		return new CommonResponse().setMessageName(StudentpoolConstants.DELETE_PLAN_MESSAGE).setTimeStamp(new Date());
+	public CommonResponse deletePlanByPlanId(Integer planId) {
+		Optional<Plan>  optionalPlan=planRepository.findById(planId);
+		if(optionalPlan.isPresent()) {
+			planRepository.deleteById(planId);
+			return new CommonResponse().setMessageName(StudentpoolConstants.DELETE_PLAN_MESSAGE).setTimeStamp(new Date());
+		}else {
+			throw new NoRecardsFoundException(StudentpoolConstants.SEARCH_NO_DATA_FOUND_MESSAGE+planId);
+		}
 	}
 
 	@Override

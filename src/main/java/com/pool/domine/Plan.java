@@ -25,8 +25,8 @@ import com.pool.model.PlanModel;
 
 public class Plan implements Serializable {
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long planId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer planId;
 	@Column(name = "PLAN_TITLE")
 	private String planTitle;
 	@Column(name = "PLAN_DESCRIPTION")
@@ -38,11 +38,11 @@ public class Plan implements Serializable {
 
 	}
 
-	public Long getPlanId() {
+	public Integer getPlanId() {
 		return planId;
 	}
 
-	public void setPlanId(Long planId) {
+	public void setPlanId(Integer planId) {
 		this.planId = planId;
 	}
 
