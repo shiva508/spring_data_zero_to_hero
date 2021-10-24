@@ -26,8 +26,8 @@ public class RestSwagger2Config {
 	
 	private ApiInfo getApiInfo() {
         return new ApiInfoBuilder()
-                	.title("USER PROFILE API ")
-                	.description("This API used to maintain user profile informatiom")
+                	.title("SPRING DATA JPA ")
+                	.description("Covers SPRING DATA JPA")
                 	.version("1.0.0")
                 	.build();
     }

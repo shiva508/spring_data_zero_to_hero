@@ -13,6 +13,9 @@ import javax.persistence.Id;
 import javax.persistence.NamedNativeQuery;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 import com.pool.model.PlanModel;
 
@@ -29,6 +32,7 @@ public class Plan implements Serializable {
 	private Integer planId;
 	@Column(name = "PLAN_TITLE")
 	private String planTitle;
+	@NotBlank
 	@Column(name = "PLAN_DESCRIPTION")
 	private String planDescription;
 	private Date planCreatedDate;
