@@ -1,0 +1,19 @@
+
+{
+  "scheduleId": 1,
+  "createdDate": "2021-12-22T01:56:33.207+00:00",
+  "targetDate": "2021-12-22T01:56:33.207+00:00",
+  "description": "I had to do this",
+  "tasks": [
+    {
+      "taskId": 2,
+      "taskDescription": "I will complete UI",
+      "why": "It helps me in future"
+    },
+ {
+      "taskDescription": "I will complete AWS",
+      "taskId": 0,
+      "why": "It helps me in future"
+    }
+  ]
+}
