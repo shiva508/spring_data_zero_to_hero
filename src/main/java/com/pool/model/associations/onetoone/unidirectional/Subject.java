@@ -42,4 +42,12 @@ public class Subject {
 		this.subjectName = subjectName;
 	}
 
+	public Faculty getFaculty() {
+		return faculty;
+	}
+
+	public void setFaculty(Faculty faculty) {
+		this.faculty = faculty;
+	}
+
 }

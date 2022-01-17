@@ -9,11 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.pool.configuration.exception.NoRecardsFoundException;
 import com.pool.constants.StudentpoolConstants;
 import com.pool.domine.Plan;
 import com.pool.model.CommonResponse;
 import com.pool.model.PlanModel;
+import com.pool.model.exception.NoRecardsFoundException;
 import com.pool.repository.PlanRepository;
 
 @Service

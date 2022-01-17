@@ -1,4 +1,4 @@
-package com.pool.configuration.exception;
+package com.pool.model.exception;
 
 public class NoRecardsFoundException extends RuntimeException {
 	public NoRecardsFoundException(String message) {

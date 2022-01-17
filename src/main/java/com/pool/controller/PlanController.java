@@ -33,8 +33,9 @@ public class PlanController {
 
 	@PostMapping("/saveplan")
 	public ResponseEntity<?> savePlan(@Valid @RequestBody Plan plan, BindingResult result) {
-		ResponseEntity<?> errorResponse=inputValidatorUtil.validationResponseExtractorResult(result);
-		if(errorResponse!=null) return errorResponse;
+		ResponseEntity<?> errorResponse = inputValidatorUtil.validationResponseExtractorResult(result);
+		if (errorResponse != null)
+			return errorResponse;
 		Plan savedPlan = planService.savePlan(plan);
 		return new ResponseEntity<>(savedPlan, HttpStatus.CREATED);
 	}
@@ -66,7 +67,6 @@ public class PlanController {
 	@GetMapping("/custumdata")
 	public ResponseEntity<?> getCustomPlanData() {
 		List<PlanModel> streamPlan = planService.getCustomPlanData();
-
 		return new ResponseEntity<>(streamPlan, HttpStatus.OK);
 	}
 }

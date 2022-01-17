@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.pool.model.exception.CustomErrorResponse;
+import com.pool.model.exception.NoRecardsFoundException;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
