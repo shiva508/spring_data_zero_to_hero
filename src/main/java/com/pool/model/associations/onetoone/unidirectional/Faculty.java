@@ -17,6 +17,12 @@ public class Faculty {
 	@Column(name = "FACULTY_NAME")
 	private String facultyName;
 
+	private String title;
+	private String genre;
+	private Double rating;
+	private Double watchTime;
+	private Integer releaseYear;
+
 	public Faculty() {
 
 	}
@@ -35,6 +41,46 @@ public class Faculty {
 
 	public void setFacultyName(String facultyName) {
 		this.facultyName = facultyName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getGenre() {
+		return genre;
+	}
+
+	public void setGenre(String genre) {
+		this.genre = genre;
+	}
+
+	public Double getRating() {
+		return rating;
+	}
+
+	public void setRating(Double rating) {
+		this.rating = rating;
+	}
+
+	public Double getWatchTime() {
+		return watchTime;
+	}
+
+	public void setWatchTime(Double watchTime) {
+		this.watchTime = watchTime;
+	}
+
+	public Integer getReleaseYear() {
+		return releaseYear;
+	}
+
+	public void setReleaseYear(Integer releaseYear) {
+		this.releaseYear = releaseYear;
 	}
 
 }

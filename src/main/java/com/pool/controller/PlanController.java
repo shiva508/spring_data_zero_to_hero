@@ -1,6 +1,8 @@
 package com.pool.controller;
 
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -9,6 +11,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -69,4 +72,25 @@ public class PlanController {
 		List<PlanModel> streamPlan = planService.getCustomPlanData();
 		return new ResponseEntity<>(streamPlan, HttpStatus.OK);
 	}
+	
+	@GetMapping("/asyncTest")
+	public void data() {
+		List<String> asgasga=getlaData();
+		List<String> asgasga2=getlaData2();
+	}
+
+
+	@Async("executor")
+	private List<String> getlaData2() {
+		
+		return Arrays.asList("1");
+	}
+	@Async("executor")
+	private List<String> getlaData() {
+		
+		return null;
+	}
+	
+	
+	
 }
