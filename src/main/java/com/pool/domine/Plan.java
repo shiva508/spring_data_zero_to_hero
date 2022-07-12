@@ -15,8 +15,6 @@ import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-import org.hibernate.validator.constraints.NotEmpty;
-
 import com.pool.model.PlanModel;
 
 @Table(name = "PLAN")

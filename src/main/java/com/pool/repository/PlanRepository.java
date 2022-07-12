@@ -1,7 +1,6 @@
 package com.pool.repository;
 
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -12,6 +11,6 @@ import com.pool.model.PlanModel;
 
 @Repository
 public interface PlanRepository extends JpaRepository<Plan, Integer> {
-	@Query(name="plantitle_description_query",nativeQuery = true)
-	public List<PlanModel> getCustomPlanData(); 
+	@Query(name = "plantitle_description_query", nativeQuery = true)
+	public List<PlanModel> getCustomPlanData();
 }
