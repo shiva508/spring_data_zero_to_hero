@@ -25,7 +25,7 @@ public class AddressManyToManyLink implements Serializable {
 
     private String houseNumber;
 
-    @OneToMany(mappedBy = "", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "addressManyToManyLink", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<PersonAddressLink> personAddressLinks = new ArrayList<>();
 
     public AddressManyToManyLink() {
